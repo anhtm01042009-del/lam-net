@@ -229,6 +229,7 @@ class DropList(QListWidget):
         self.setAcceptDrops(True)
         self.setSelectionMode(QAbstractItemView.SingleSelection)
         self.setMinimumWidth(280)
+        self.setMinimumHeight(80)
 
     def dragEnterEvent(self, e):
         if e.mimeData().hasUrls():
@@ -472,7 +473,11 @@ def main():
     app = QApplication(sys.argv)
     app.setStyle("Fusion")
     w = Main()
-    w.show()
+    scr = app.primaryScreen().availableGeometry()
+    if scr.height() < 800 or scr.width() < 1250:
+        w.showMaximized()        # màn hình nhỏ: mở toàn màn hình để không bị taskbar che
+    else:
+        w.show()
     if len(sys.argv) > 1:
         w.add_paths(sys.argv[1:])
     return app.exec()

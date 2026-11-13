@@ -1,6 +1,6 @@
-# Sẽ ghim phiên bản sau khi cài thử ở M0
 onnxruntime
 opencv-python
 numpy
 Pillow
-# PySide6   # bật từ M1
+psutil
+# PySide6   # bat tu M1

@@ -16,6 +16,12 @@ App máy tính (Windows) làm nét và phóng to ảnh 2×/4×, kể cả **ản
 | `outputs/` | Ảnh kết quả (không đưa lên GitHub) |
 | `docs/` | Hỏi đáp (`QA.md`) và quyết định (`decisions/`) |
 
+## Chạy (M0)
+- Lần đầu và mỗi khi cần đo lại: bấm đúp `chay-m0.bat` (tự cài Python + thư viện vào `.venv312`, chạy ca kiểm chứng, đo tốc độ, ghi `outputs/ket-qua-m0.txt`).
+- Dòng lệnh: `.venv312\Scripts\python.exe src\lam_net\cli.py <ảnh hoặc thư mục> [--kieu truyen|anh] [--scale 2|4] [--nhanh] [--do]`
+
+- Cuối phiên: bấm đúp `ban-giao.bat` (kiểm chứng → commit → đẩy lên GitHub → gắn tag mốc nếu có).
+
 ## File ghi chép
 - `HANDOVER.md` — bàn giao giữa các phiên (ghi đè mỗi phiên).
 - `CHANGELOG.md` — nhật ký thay đổi (chỉ thêm).

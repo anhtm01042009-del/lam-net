@@ -9,6 +9,8 @@ Mỗi dòng một quy tắc, kèm ngày ghi. CHỈ THÊM; quy tắc mới mâu t
 - [2026-11-13] Không đưa ảnh truyện có bản quyền, ảnh cá nhân và file mô hình lớn lên GitHub (chặn bằng `.gitignore`).
 - [2026-11-13] App phải chạy được trên máy không có card đồ họa rời (CPU là đường chính); tăng tốc bằng GPU chỉ là phần thêm.
 - [2026-11-13] Không ghi số liệu tốc độ hay chất lượng khi chưa đo thật trên máy; kết quả đo ghi vào `docs/QA.md`.
+- [2026-11-13] Tiêu chí chất lượng: ảnh truyện đăng web phải thật nét, không vỡ.
+- [2026-11-13] Mặc định phóng 2× (chạy AI 4× rồi thu về 2×) cho ảnh đăng web; 4× là tùy chọn khi cần phóng to lớn.
 
 ## Git
 - [2026-11-13] Repo `lam-net` trên tài khoản GitHub của em Minh Anh; commit và push thẳng `main`, không dùng nhánh phụ; gắn tag cho mỗi mốc (`m0`, `m1`, …).

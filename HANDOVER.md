@@ -14,7 +14,7 @@ M1 xong phần code: app có giao diện (kéo-thả, chọn kiểu ảnh và m�
 - **Cấu trúc code:**
   - `src/lam_net/gui.py` — PySide6. `Worker(QThread)` chạy tuần tự, kiểm tra cờ dừng mỗi ô (ném `Cancelled` trong callback `progress`). `Preview`: hai `QGraphicsView` cùng kích thước cảnh (ảnh trước kéo giãn về kích thước ảnh sau) → đồng bộ thanh cuộn và phóng. Lỗi ghi `outputs/app-log.txt` (`sys.excepthook` + mỗi ảnh xong ghi 1 dòng có thời gian).
   - `src/lam_net/engine.py`, `tiling.py` (**lõi khóa**), `process.py`, `cli.py` — như M0; mặc định ô đổi 192 → 384 (cli + process + gui).
-  - `mo-app.bat` — chưa có `.venv312` thì gọi `chay-m0.bat`; thiếu PySide6 thì `pip install -r requirements.txt`; chạy `pythonw` (không hiện cửa sổ đen).
+  - `mo-app.bat` — chưa có `.venv312` thì gọi `chay-m0.bat`; thiếu PySide6 thì `pip install -r requirements.txt`; chạy `python` có cửa sổ đen để thấy lỗi (bản pythonw ẩn lỗi khiến app "không mở" mà không báo gì trên máy em).
   - `cap-nhat.bat` — `git pull --ff-only origin main`.
   - `ban-giao.bat` — bản viết cho phiên M0 (danh sách file + message cố định). Không chạy lại; phiên sau, nếu cần em commit từ máy, Claude viết bản mới.
 - **Cách giao code (mới):** Claude có quyền push vào repo `anhtm01042009-del/lam-net` qua phiên làm việc → sửa trong bản clone `/home/claude/lam-net`, commit + push `main`, em chạy `cap-nhat.bat`. Dùng khi kết nối tới máy em hỏng. Trước khi push luôn `git pull` để không đè việc em làm ở máy.

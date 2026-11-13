@@ -10,6 +10,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+try:
+    import PySide6  # noqa: F401
+except Exception:
+    import traceback as _tb
+    _log = Path(__file__).resolve().parents[2] / "outputs" / "app-log.txt"
+    _log.parent.mkdir(parents=True, exist_ok=True)
+    _log.open("a", encoding="utf-8").write("IMPORT PySide6 LOI\n" + _tb.format_exc())
+    raise
+
 from PySide6.QtCore import Qt, QThread, Signal, QUrl, QRectF
 from PySide6.QtGui import QImage, QPixmap, QDesktopServices, QPainter, QColor, QFont
 from PySide6.QtWidgets import (
@@ -455,7 +464,11 @@ class Main(QMainWindow):
 
 
 def main():
-    sys.excepthook = lambda t, v, tb: log("CRASH\n" + "".join(traceback.format_exception(t, v, tb)))
+    def hook(t, v, tb):
+        msg = "".join(traceback.format_exception(t, v, tb))
+        log("CRASH\n" + msg)
+        sys.__stderr__.write(msg)
+    sys.excepthook = hook
     app = QApplication(sys.argv)
     app.setStyle("Fusion")
     w = Main()

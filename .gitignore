@@ -1,0 +1,23 @@
+# Ảnh và mô hình — không đưa lên GitHub
+samples/*
+!samples/.gitkeep
+outputs/*
+!outputs/.gitkeep
+engine/*
+!engine/README.md
+*.onnx
+*.pth
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+build/
+dist/
+*.spec
+
+# Hệ thống
+Thumbs.db
+desktop.ini
+.vscode/

@@ -2,6 +2,11 @@
 
 CHỈ THÊM. Mỗi mục ghi nguồn và độ chắc chắn: Đã kiểm chứng / Tra cứu / Giả định.
 
+## 2026-11-13 (phiên 3)
+**H:** Cỡ ô nào nhanh nhất?
+**Đ:** Ô càng lớn thì phần đệm quanh ô chiếm tỉ lệ càng nhỏ nên càng nhanh: đệm 20 px quanh ô 192 làm tăng ~46% khối lượng tính, quanh ô 384 chỉ ~22%. Thử ở môi trường Claude, ô 384 nhanh hơn ô 192 rõ rệt và gần bằng ô 512. Đổi mặc định sang 384; RAM tăng không đáng kể. Số giây trên máy em cần đo lại.
+*Nguồn:* đo so sánh tương đối ở môi trường Claude. *Độ chắc chắn:* Đã kiểm chứng (tương đối), chờ số đo trên máy em.
+
 ## 2026-11-13 (phiên 2)
 **H:** Ghép ảnh từ nhiều ô có lộ đường nối không?
 **Đ:** Không. Mỗi ô được đệm thêm phần ảnh xung quanh lớn hơn vùng ảnh hưởng của mô hình (17 lớp conv cho "truyện", 33 lớp cho "ảnh chụp"), nên ảnh ghép khớp tuyệt đối với chạy nguyên ảnh: ca `validation/cases/test_duong_noi.py` cho sai lệch tối đa 0 ở cả hai mô hình, cỡ ô 64 và 100. Kiểm tra bằng mắt trên ảnh truyện thật của em cũng không thấy vệt.

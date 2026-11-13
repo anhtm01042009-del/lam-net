@@ -30,7 +30,7 @@ def fast_upscale(img, scale):
     return cv2.addWeighted(up, 1.5, blur, -0.5, 0)
 
 
-def upscale_image(img, scale=2, kieu="truyen", tile=192, upscaler=None, progress=None, nhanh=False):
+def upscale_image(img, scale=2, kieu="truyen", tile=384, upscaler=None, progress=None, nhanh=False):
     if nhanh:
         return fast_upscale(img, scale)
     up = upscaler or Upscaler(kieu)

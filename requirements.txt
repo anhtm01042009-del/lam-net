@@ -3,4 +3,4 @@ opencv-python
 numpy
 Pillow
 psutil
-# PySide6   # bat tu M1
+PySide6

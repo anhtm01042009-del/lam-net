@@ -34,7 +34,7 @@ def main(argv=None):
     ap.add_argument("inputs", nargs="+")
     ap.add_argument("--kieu", choices=["truyen", "anh"], default="truyen")
     ap.add_argument("--scale", type=int, choices=[2, 4], default=2)
-    ap.add_argument("--tile", type=int, default=192)
+    ap.add_argument("--tile", type=int, default=384)
     ap.add_argument("--out", default=str(ROOT / "outputs"))
     ap.add_argument("--nhanh", action="store_true", help="Lanczos, không dùng AI")
     ap.add_argument("--do", action="store_true", help="in thời gian và RAM")
